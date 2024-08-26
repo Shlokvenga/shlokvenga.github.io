@@ -21,17 +21,46 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #000;
+            background-color: #ffffff;
+        }
+
+        /* Logo Styling */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            width: 150px; /* Adjust the size for responsiveness */
+        }
+
+        .brain {
+            position: absolute;
+            top: 50px;
+            left: 10%;
+            transform: translateX(-50%);
+            z-index: 2;
+            width: 850px;
+            opacity: 0.2;
+        }
+
+        .robot {
+            position: absolute;
+            top: 50px;
+            left: 1000px;
+            z-index: 2;
+            width: 700px;
+            opacity: 0.2;
         }
 
         .welcome-text {
             position: absolute;
-            top: 150px; /* Adjusted top position to leave space for the logo */
+            top: 150px;
             left: 50%;
             transform: translateX(-50%);
             color: #ffffff;
             font-size: 2em;
-            font-family: 'open', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             z-index: 1;
@@ -39,23 +68,26 @@
 
         .grid-container {
             position: absolute;
-            top: 300px; /* Adjusted top position to leave space for welcome text */
+            top: 50%;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 20px;
             z-index: 1;
+            padding: 0 10px;
         }
 
         .grid-item {
-            background-color: rgba(36, 35, 33, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            background-color: #bcbcbc;
+            border: 1px solid rgba(0, 0, 0, 0.6);
             border-radius: 10px;
-            padding: 20px;
-            color: rgb(89, 94, 220);
+            padding: 10px;
+            color: rgb(51, 51, 53);
             text-align: center;
-            width: 200px;
+            height: 150px;
+            width: 250px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -78,6 +110,80 @@
             gap: 10px;
         }
 
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            .brain, .robot {
+                width: 300px;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            .welcome-text {
+                font-size: 1.8em;
+                top: 130px;
+            }
+
+            .grid-container {
+                top: 60%;
+            }
+
+            .grid-item {
+                width: 220px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .brain, .robot {
+                width: 200px;
+                opacity: 0.3;
+            }
+
+            .logo {
+                width: 80px;
+            }
+
+            .welcome-text {
+                font-size: 1.5em;
+                top: 120px;
+            }
+
+            .grid-item {
+                width: 180px;
+                height: 140px;
+            }
+
+            .grid-container {
+                top: 55%;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brain, .robot {
+                display: none;
+            }
+
+            .logo {
+                width: 70px;
+            }
+
+            .welcome-text {
+                font-size: 1.2em;
+                top: 100px;
+            }
+
+            .grid-item {
+                width: 150px;
+                height: 130px;
+            }
+
+            .grid-container {
+                top: 50%;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -85,8 +191,14 @@
     <!-- Particle background -->
     <div id="particles-js"></div>
 
+    <!-- Logo at the Top Center -->
+    <img src="DALL·E_2024-08-26_12.38.37_-_A_regal_logo_for__Lord_Venga__with_a_royal_emblem__featuring_a_golden_lion_and_crossed_swords._The_logo_should_have_a_royal_blue_and_gold_color_theme-transformed.webp" alt="Logo" class="logo">
+    <img src="png-transparent-human-brain-illustration-blue-brain-project-human-brain-cognitive-training-neuron-the-brain-of-the-human-brain-food-people-human-thumbnail-removebg-preview.png" alt="brain" class="brain">
+    <img src="robot-removebg-preview.png" alt="robot" class="robot">
+
+
     <!-- Welcome Text -->
-    <h1><div class="welcome-text">Vengurlekar</div></h1>
+    <h1><div class="welcome-text"></div></h1>
 
     <!-- Grid Container with Four Blocks Aligned in a Row -->
     <div class="grid-container">
@@ -158,7 +270,7 @@
     </div>
 
     <!-- Include Particles.js -->
-    <script src="particles.js"></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             particlesJS("particles-js", {
@@ -171,13 +283,13 @@
                         }
                     },
                     "color": {
-                        "value": "#ffffff"
+                        "value": "#000"
                     },
                     "shape": {
                         "type": "circle",
                         "stroke": {
                             "width": 0,
-                            "color": "#000000"
+                            "color": "#000"
                         },
                         "polygon": {
                             "nb_sides": 5
@@ -211,7 +323,7 @@
                     "line_linked": {
                         "enable": true,
                         "distance": 150,
-                        "color": "#ffffff",
+                        "color": "#000",
                         "opacity": 0.4,
                         "width": 1
                     },
