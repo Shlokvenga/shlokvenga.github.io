@@ -31,64 +31,63 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
-            width: 150px; /* Adjust the size of the logo for smaller screens */
+            width: 200px; /* Adjust the size of the logo as needed */
         }
 
         .brain {
             position: absolute;
-            top: 100px;
-            left: 5%;
+            top: 50px;
+            left: 10%;
             transform: translateX(-50%);
             z-index: 2;
-            width: 400px;
-            opacity: 0.15;
+            width: 850px; /* Adjust the size of the logo as needed */
+            opacity: 0.2;
         }
+
 
         .robot {
             position: absolute;
-            top: 100px;
-            right: 5%;
-            transform: translateX(50%);
+            top: 50px;
+            left: 100%;
+            transform: translateX(-50%);
             z-index: 2;
-            width: 400px;
-            opacity: 0.15;
+            width: 750px; /* Adjust the size of the logo as needed */
+            opacity: 0.2;
         }
 
-        /* Welcome Text Styling */
         .welcome-text {
             position: absolute;
-            top: 150px;
+            top: 150px; /* Adjusted top position to leave space for the logo */
             left: 50%;
             transform: translateX(-50%);
             color: #ffffff;
-            font-size: 2.5em;
+            font-size: 2em;
+            font-family: 'open', sans-serif;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             z-index: 1;
-            padding: 0 20px;
         }
 
-        /* Grid Container Styling */
         .grid-container {
             position: absolute;
-            top: 50%;
+            top: 650px; /* Adjusted top position to leave space for welcome text */
             left: 50%;
-            transform: translate(-50%, -50%);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
             gap: 20px;
             z-index: 1;
-            width: 90%;
-            padding: 20px;
         }
 
         .grid-item {
-            background-color: #bcbcbc;
+            background-color:  #bcbcbc;
             border: 1px solid rgba(0, 0, 0, 0.6);
             border-radius: 10px;
-            padding: 20px;
+            padding: 10px;
             color: rgb(51, 51, 53);
             text-align: center;
+            height: 125px;
+            width: 300px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -98,6 +97,7 @@
             color: white;
             font-size: 1.5em;
             text-decoration: none;
+            display: inline-block;
             margin: 5px;
         }
 
@@ -109,53 +109,6 @@
             display: flex;
             gap: 10px;
         }
-
-        /* Media Queries for Responsiveness */
-        @media (max-width: 1200px) {
-            .brain, .robot {
-                width: 300px;
-                opacity: 0.1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .welcome-text {
-                font-size: 2em;
-            }
-
-            .logo {
-                width: 100px;
-            }
-
-            .brain, .robot {
-                display: none;
-            }
-
-            .grid-item {
-                width: 100%;
-                padding: 10px;
-            }
-
-            .icon-link {
-                font-size: 1.2em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .welcome-text {
-                font-size: 1.5em;
-                top: 100px;
-            }
-
-            .grid-container {
-                grid-template-columns: 1fr;
-                top: 60%;
-            }
-
-            .logo {
-                width: 80px;
-            }
-        }
     </style>
 </head>
 
@@ -165,12 +118,12 @@
 
     <!-- Logo at the Top Center -->
     <img src="DALL·E_2024-08-26_12.38.37_-_A_regal_logo_for__Lord_Venga__with_a_royal_emblem__featuring_a_golden_lion_and_crossed_swords._The_logo_should_have_a_royal_blue_and_gold_color_theme-transformed.webp" alt="Logo" class="logo">
-    
     <img src="png-transparent-human-brain-illustration-blue-brain-project-human-brain-cognitive-training-neuron-the-brain-of-the-human-brain-food-people-human-thumbnail-removebg-preview.png" alt="brain" class="brain">
     <img src="robot-removebg-preview.png" alt="robot" class="robot">
 
+
     <!-- Welcome Text -->
-    <div class="welcome-text"></div>
+    <h1><div class="welcome-text"></div></h1>
 
     <!-- Grid Container with Four Blocks Aligned in a Row -->
     <div class="grid-container">
