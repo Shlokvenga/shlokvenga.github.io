@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Background with Particles.js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+
+        .welcome-text {
+            position: absolute;
+            top: 150px; /* Adjusted top position to leave space for the logo */
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ffffff;
+            font-size: 2em;
+            font-family: 'open', sans-serif;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .grid-container {
+            position: absolute;
+            top: 300px; /* Adjusted top position to leave space for welcome text */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 1;
+        }
+
+        .grid-item {
+            background-color: rgba(36, 35, 33, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            color: rgb(89, 94, 220);
+            text-align: center;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .icon-link {
+            color: white;
+            font-size: 1.5em;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .icon-link:hover {
+            color: #00a2ff;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Particle background -->
+    <div id="particles-js"></div>
+
+    <!-- Welcome Text -->
+    <h1><div class="welcome-text">Vengurlekar</div></h1>
+
+    <!-- Grid Container with Four Blocks Aligned in a Row -->
+    <div class="grid-container">
+        <!-- Sachin's Block -->
+        <div class="grid-item">
+            <h3>Sachin</h3>
+            <a href="mailto:sachin@vengurlekar.com" class="icon-link" title="Send Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <div class="social-icons">
+                <a href="https://x.com/sachinvenga" class="icon-link" title="X">
+                    <i class="fab fa-x"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Devyani's Block -->
+        <div class="grid-item">
+            <h3>Devyani</h3>
+            <a href="mailto:devyani@vengurlekar.com" class="icon-link" title="Send Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/devyanivengurlekar/" class="icon-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Samarth's Block -->
+        <div class="grid-item">
+            <h3>Samarth</h3>
+            <a href="mailto:samarth@vengurlekar.com" class="icon-link" title="Send Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/samarthvenga_02/" class="icon-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/Samarth_Venga" class="icon-link" title="X">
+                    <i class="fab fa-x"></i>
+                </a>
+                <a href="https://in.linkedin.com/in/samarth-vengurlekar-915510215" class="icon-link" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Shlok's Block -->
+        <div class="grid-item">
+            <h3>Shlok</h3>
+            <a href="mailto:shlok@vengurlekar.com" class="icon-link" title="Send Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/shlok_vengurlekar/" class="icon-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/Shlok48171076" class="icon-link" title="X">
+                    <i class="fab fa-x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats: Count of particles -->
+    <div class="count-particles">
+        <span class="js-count-particles">--</span> particles
+    </div>
+
+    <!-- Include Particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+
+            var count_particles = document.querySelector('.js-count-particles');
+            function update() {
+                count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+                requestAnimationFrame(update);
+            }
+            update();
+        });
+    </script>
+</body>
+
+</html>
